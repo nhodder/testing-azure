@@ -5,3 +5,15 @@
 
 <h2>Index</h2>
 
+@if (ViewBag.Records != null)
+{
+    List<Tuple<string, string>> records = (List<Tuple<string, string>>)ViewBag.Records;
+    foreach (var record in records)
+    {
+        <span>Name</span>
+        @(record.Item1)
+        <br />
+        <span>Url</span>
+        @(record.Item2)
+    }
+}
